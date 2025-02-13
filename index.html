@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 静态个人网页 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .general-tags {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+
+        header {
+            background-color: #0047C4;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+        }
+        footer {
+            background-color: #0047C4;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: #fff;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-info h2 {
+            margin: 0;
+            color: #000000;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            color: #000000;
+        }
+        .accordion {
+            background-color: #ffffff;
+            color: #000000;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        .scrollable-box {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #000000;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<header>
+    <h2>  Welcome to my website </h2>
+</header>
+
+<div class="container">
+    <!-- profile -->
+    
+    <div class="profile">
+        <img src="  " alt="photo">
+        <div class="profile-info">
+            <h2> Name </h2>
+            <p> titles </p>
+            <p> university</p>
+            <p> contacts </p>
+            <p> social medias</p>
+        </div>
+    </div>
+
+
+    <!-- general tags -->
+    <div class="general-tags">
+        <h3> About </h3>
+        <p> informations </p>
+        
+    </div>
+
+    <!-- 折叠-->
+    <button class="accordion"> <h3> Alumni </h3> </button>
+
+    <div class="panel">
+        <p> person 1 </p>
+        <p> person 2 </p>
+        <p> person 3 </p>
+        <p> person 4 </p>
+    </div>
+
+    <button class="accordion"> <h3> Publications </h3> </button>
+    <!-- 滚动 -->
+    <div class="panel">
+        <div class="scrollable-box">
+            <p> program 1</p>
+            <p> program 2</p>
+            <p> program 3</p>
+            <p> program 4</p>
+            <p> program 5</p>
+            <p> program 6</p>
+            <p> program 7</p>
+            <p> program 8</p>
+            <p> program 9</p>
+        </div>
+    </div>
+
+    <button class="accordion"> <h3> Awards </h3> </button>
+    <div class="panel">
+        <p> list1 </p>
+        <p> list2 </p>
+        <p> list3 </p>
+        <p> list4 </p>
+    </div>
+    
+    <!-- 滚动 -->
+    <div class="general-tags">
+    <h3> News </h3>
+        <div class="scrollable-box">
+            <p> scrollable news 1 </p>
+            <p> scrollable news 2 </p>
+            <p> scrollable news 3 </p>
+            <p> scrollable news 4 </p>
+            <p> scrollable news 5 </p>
+            <p> scrollable news 6 </p>
+            <p> scrollable news 7 </p>
+        </div>
+    </div>
+    
+    <div class="general-tags">
+        <h3> Service </h3>
+        <p> informations </p>
+        
+    </div>
+
+
+
+</div>
+
+<footer>
+    <p>&copy; footer --- last update by: RC</p>
+</footer>
+
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+    }
+</script>
+
+</body>
+
+</html>
