@@ -18,3 +18,16 @@ https://getoor.linqs.org/
 
 风格简约一点！配色可以用蓝色
 蓝白黑就行
+
+
+Lynn丶Rva:
+哦！我再加个功能成么
+
+Lynn丶Rva:
+https://www.cs.princeton.edu/~danqic/papers.html
+
+Lynn丶Rva:
+就像这个一样，能列paper，然后下面有bib，abstract等等，可以点，点开就是一段话
+
+Lynn丶Rva:
+我觉得这个比折叠好用！折叠可以不要了
