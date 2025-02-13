@@ -3,187 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 静态个人网页 </title>
+    <title>静态个人网页</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 10px;
-            background-color: #ffffff;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
-
-        .general-tags {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
-            background-color: #ffffff;
-        }
-
 
         header {
             background-color: #0047C4;
-            color: rgb(0, 0, 0);
-            padding: 10px;
+            color: white;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         footer {
             background-color: #0047C4;
-            color: rgb(0, 0, 0);
+            color: white;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             position: fixed;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .container {
             max-width: 900px;
             margin: 50px auto;
-            padding: 10px;
-            background-color: #fff;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .profile {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
+
         .profile img {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-right: 25px;
+            border: 4px solid #0047C4;
         }
+
         .profile-info h2 {
             margin: 0;
-            color: #000000;
+            font-size: 24px;
+            color: #0047C4;
         }
+
         .profile-info p {
             margin: 5px 0;
-            color: #000000;
+            font-size: 16px;
+            color: #555;
         }
+
         .accordion {
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #f9f9f9;
+            color: #0047C4;
             cursor: pointer;
-            padding: 10px;
+            padding: 15px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
             transition: 0.4s;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .active, .accordion:hover {
-            background-color: #ccc;
+            background-color: #0047C4;
+            color: white;
         }
+
         .panel {
-            padding: 0 18px;
+            padding: 0 15px;
             background-color: white;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.2s ease-out;
+            border-left: 4px solid #0047C4;
+            margin-top: 5px;
         }
+
         .scrollable-box {
             max-height: 200px;
             overflow-y: auto;
-            border: 2px solid #000000;
+            border: 2px solid #ddd;
             padding: 10px;
             margin-top: 10px;
             background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .general-tags {
+            margin-bottom: 20px;
+        }
+
+        .general-tags h3 {
+            color: #0047C4;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .general-tags p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
         }
     </style>
 </head>
-
-
 <body>
 
 <header>
-    <h2>  Welcome to my website </h2>
+    <h2>Welcome to My Website</h2>
 </header>
 
 <div class="container">
-    <!-- profile -->
-    
+    <!-- Profile Section -->
     <div class="profile">
-        <img src="  " alt="photo">
+        <img src="https://dyang39.github.io/images/Cropped%20Circle.png" alt="photo">
         <div class="profile-info">
-            <h2> Name </h2>
-            <p> titles </p>
-            <p> university</p>
-            <p> contacts </p>
-            <p> social medias</p>
+            <h2>Diji Yang</h2>
+            <p>PhD student | AI Enthusiast</p>
+            <p>University of California Santa Cruz</p>
+            <p>Email: dyang39@csumb.edu</p>
+            <p>LinkedIn: <a href="#" style="color: #0047C4;">diji-yang</a></p>
         </div>
     </div>
 
-
-    <!-- general tags -->
+    <!-- About Section -->
     <div class="general-tags">
-        <h3> About </h3>
-        <p> informations </p>
-        
+        <h3>About</h3>
+        <p>Diji Yang
+            I’m currently a PhD student at the University of California Santa Cruz working with Prof. 
+            Yi Zhang. I received my Bachelor’s degree in Computer Science and Statistics from UC Santa Cruz. 
+            I’m fortunate to have joined Prof. Xin Eric Wang’s lab to focus on the NLP research.</p>
     </div>
 
-    <!-- 折叠-->
-    <button class="accordion"> <h3> Alumni </h3> </button>
 
-    <div class="panel">
-        <p> person 1 </p>
-        <p> person 2 </p>
-        <p> person 3 </p>
-        <p> person 4 </p>
+    <!-- Services Section -->
+    <div class="general-tags">
+        <h3>  Services</h3>
+        <p>
+        <b>Teaching assistant: </b>Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023
+        <br>  
+        <b>Reviewer:</b> NeurIPS 2023, TheWebConf 2024, CVPR 2024, ICML 2024
+        </p>
     </div>
 
-    <button class="accordion"> <h3> Publications </h3> </button>
-    <!-- 滚动 -->
+
+    <!-- Publications Section -->
+    <button class="accordion"><h3>Publications</h3></button>
     <div class="panel">
         <div class="scrollable-box">
-            <p> program 1</p>
-            <p> program 2</p>
-            <p> program 3</p>
-            <p> program 4</p>
-            <p> program 5</p>
-            <p> program 6</p>
-            <p> program 7</p>
-            <p> program 8</p>
-            <p> program 9</p>
+            <p>Program 1</p>
+            <p>Program 2</p>
+            <p>Program 3</p>
+            <p>Program 4</p>
+            <p>Program 5</p>
+            <p>Program 6</p>
+            <p>Program 7</p>
+            <p>Program 8</p>
+            <p>Program 9</p>
         </div>
     </div>
 
-    <button class="accordion"> <h3> Awards </h3> </button>
-    <div class="panel">
-        <p> list1 </p>
-        <p> list2 </p>
-        <p> list3 </p>
-        <p> list4 </p>
-    </div>
-    
-    <!-- 滚动 -->
+    <!-- News Section -->
     <div class="general-tags">
-    <h3> News </h3>
+        <h3>News</h3>
         <div class="scrollable-box">
-            <p> scrollable news 1 </p>
-            <p> scrollable news 2 </p>
-            <p> scrollable news 3 </p>
-            <p> scrollable news 4 </p>
-            <p> scrollable news 5 </p>
-            <p> scrollable news 6 </p>
-            <p> scrollable news 7 </p>
+            <p>Scrollable News 1</p>
+            <p>Scrollable News 2</p>
+            <p>Scrollable News 3</p>
+            <p>Scrollable News 4</p>
+            <p>Scrollable News 5</p>
+            <p>Scrollable News 6</p>
+            <p>Scrollable News 7</p>
         </div>
     </div>
-    
-    <div class="general-tags">
-        <h3> Service </h3>
-        <p> informations </p>
-        
-    </div>
-
 
 
 </div>
 
 <footer>
-    <p>&copy; footer --- last update by: RC</p>
+    <p>&copy; Diji Yang. Last updated by: RC</p>
 </footer>
-
 
 <script>
     var acc = document.getElementsByClassName("accordion");
@@ -203,5 +221,4 @@
 </script>
 
 </body>
-
 </html>
