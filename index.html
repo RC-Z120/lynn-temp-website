@@ -124,13 +124,38 @@
             line-height: 1.6;
             color: #555;
         }
+
+        .publication {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 4px solid #0047C4;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .publication h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #0047C4;
+        }
+
+        .publication p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .publication a {
+            color: #0047C4;
+            text-decoration: none;
+        }
+
+        .publication a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h2>Welcome to My Website</h2>
-</header>
 
 <div class="container">
     <!-- Profile Section -->
@@ -166,21 +191,33 @@
     </div>
 
 
-    <!-- Publications Section -->
-    <button class="accordion"><h3>Publications</h3></button>
-    <div class="panel">
-        <div class="scrollable-box">
-            <p>Program 1</p>
-            <p>Program 2</p>
-            <p>Program 3</p>
-            <p>Program 4</p>
-            <p>Program 5</p>
-            <p>Program 6</p>
-            <p>Program 7</p>
-            <p>Program 8</p>
-            <p>Program 9</p>
-        </div>
-    </div>
+     <!-- Publications Section -->
+     <button class="accordion"><h3>Publications</h3></button>
+     <div class="panel">
+         <!-- 论文 1 -->
+         <div class="publication">
+             <h2>Right this way: Can VLMs Guide Us to See More to Answer Questions?</h2>
+             <p><strong>Diji Yang</strong>Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin</p>
+             <p><em>NeurIPS 2024</em></p>
+             <p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/pdf/2411.00394" target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
+         </div>
+ 
+         <!-- 论文 2 -->
+         <div class="publication">
+             <h2>IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues</h2>
+             <p><strong>Diji Yang</strong>Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
+             <p><em>SIGIR 2024</em></p>
+             <p><a href=" " target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
+         </div>
+ 
+         <!-- 论文 3 -->
+         <div class="publication">
+             <h2>A bespoke question intent taxonomy for e-commerce</h2>
+             <p><strong>Diji Yang</strong>, Emily White, Michael Green</p>
+             <p><em>SIGIR 2024 workshop on eCommerce</em></p>
+             <p><a href=" " target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
+         </div>
+     </div>
 
     <!-- News Section -->
     <div class="general-tags">
