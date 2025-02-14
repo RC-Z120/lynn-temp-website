@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>静态个人网页</title>
+    <title>Diji Yang - Personal Website</title>
+    
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
             background-color: #0047C4;
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 3s ease; /* Smooth fade-out effect */
         }
 
         footer {
@@ -35,16 +38,16 @@
         .container {
             max-width: 900px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         .profile {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .profile img {
@@ -53,12 +56,18 @@
             border-radius: 50%;
             margin-right: 25px;
             border: 4px solid #0047C4;
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
         }
 
         .profile-info h2 {
             margin: 0;
-            font-size: 24px;
+            font-size: 28px;
             color: #0047C4;
+            font-weight: 600;
         }
 
         .profile-info p {
@@ -67,21 +76,44 @@
             color: #555;
         }
 
+        .profile-info a {
+            color: #0047C4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+        }
+
         .accordion {
             background-color: #f9f9f9;
             color: #0047C4;
             cursor: pointer;
-            padding: 15px;
+            padding: 18px;
             width: 100%;
             border: none;
             text-align: left;
             outline: none;
             font-size: 18px;
-            font-weight: bold;
-            transition: 0.4s;
-            border-radius: 5px;
-            margin-top: 10px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            margin-top: 15px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .accordion::after {
+            content: "▼";
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .active::after {
+            transform: rotate(180deg);
         }
 
         .active, .accordion:hover {
@@ -90,33 +122,35 @@
         }
 
         .panel {
-            padding: 0 15px;
+            padding: 0 18px;
             background-color: white;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.2s ease-out;
+            transition: max-height 0.3s ease-out;
             border-left: 4px solid #0047C4;
-            margin-top: 5px;
+            margin-top: 10px;
+            border-radius: 0 0 8px 8px;
         }
 
         .scrollable-box {
             max-height: 200px;
             overflow-y: auto;
             border: 2px solid #ddd;
-            padding: 10px;
+            padding: 15px;
             margin-top: 10px;
             background-color: #f9f9f9;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         .general-tags {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .general-tags h3 {
             color: #0047C4;
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .general-tags p {
@@ -127,35 +161,91 @@
 
         .publication {
             margin-bottom: 20px;
-            padding: 15px;
+            padding: 20px;
             border-left: 4px solid #0047C4;
             background-color: #f9f9f9;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .publication:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .publication h2 {
             margin: 0;
-            font-size: 18px;
+            font-size: 20px;
             color: #0047C4;
+            font-weight: 600;
         }
 
         .publication p {
             font-size: 14px;
             color: #555;
+            margin: 8px 0;
         }
 
         .publication a {
             color: #0047C4;
             text-decoration: none;
+            font-weight: 500;
         }
 
         .publication a:hover {
             text-decoration: underline;
         }
+
+        .news-item {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #0047C4;
+        }
+
+        .news-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .toggle-button {
+            background-color: #0047C4;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background-color: #003399;
+        }
+
+        .toggle-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .toggle-content pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
 
+<header id="welcomeHeader">
+    <h2>Welcome to Diji Yang's Website</h2>
+</header>
 
 <div class="container">
     <!-- Profile Section -->
@@ -179,61 +269,146 @@
             I’m fortunate to have joined Prof. Xin Eric Wang’s lab to focus on the NLP research.</p>
     </div>
 
-
     <!-- Services Section -->
     <div class="general-tags">
-        <h3>  Services</h3>
+        <h3>Services</h3>
         <p>
-        <b>Teaching assistant: </b>Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023
-        <br>  
-        <b>Reviewer:</b> NeurIPS 2023, TheWebConf 2024, CVPR 2024, ICML 2024
+            <b>Teaching assistant: </b>Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023
+            <br>  
+            <b>Reviewer:</b> NeurIPS 2023, TheWebConf 2024, CVPR 2024, ICML 2024
         </p>
     </div>
 
+    <!-- Publications Section -->
+    <button class="accordion"><h3>Publications</h3></button>
+    <div class="panel">
+        <!-- Publication 1 -->
+        <div class="publication">
+            <h2>Right this way: Can VLMs Guide Us to See More to Answer Questions?</h2>
+            <p><strong>Diji Yang</strong>, Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin</p>
+            <p><em>NeurIPS 2024</em></p>
+            <p>
+                <a href=" " target="_blank">[arXiv]</a>
+                <a href=" " target="_blank">[Code]</a>
+                <a href=" " target="_blank">[Data]</a>
+                <button class="toggle-button" onclick="toggleContent('bib1')">[BibTeX]</button>
+                <button class="toggle-button" onclick="toggleContent('abstract1')">[Abstract]</button>
+            </p>
+            <div id="bib1" class="toggle-content">
+                <pre>
+@article{yang2024right,
+  title={Right this way: Can VLMs Guide Us to See More to Answer Questions?},
+  author={Yang, Diji and Liu, Li and Zhong, Sijia and Tholeti, Kalyana Suma Sree and Ding, Lei and Zhang, Yi and Gilpin, Leilani H},
+  journal={NeurIPS},
+  year={2024}
+}
+                </pre>
+            </div>
+            <div id="abstract1" class="toggle-content">
+                <p>
+                    This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems.
+                </p>
+            </div>
+        </div>
 
-     <!-- Publications Section -->
-     <button class="accordion"><h3>Publications</h3></button>
-     <div class="panel">
-         <!-- 论文 1 -->
-         <div class="publication">
-             <h2>Right this way: Can VLMs Guide Us to See More to Answer Questions?</h2>
-             <p><strong>Diji Yang</strong>Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin</p>
-             <p><em>NeurIPS 2024</em></p>
-             <p><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/pdf/2411.00394" target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
-         </div>
- 
-         <!-- 论文 2 -->
-         <div class="publication">
-             <h2>IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues</h2>
-             <p><strong>Diji Yang</strong>Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
-             <p><em>SIGIR 2024</em></p>
-             <p><a href=" " target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
-         </div>
- 
-         <!-- 论文 3 -->
-         <div class="publication">
-             <h2>A bespoke question intent taxonomy for e-commerce</h2>
-             <p><strong>Diji Yang</strong>, Emily White, Michael Green</p>
-             <p><em>SIGIR 2024 workshop on eCommerce</em></p>
-             <p><a href=" " target="_blank">[PDF]</a> | <a href=" " target="_blank">[abstract]</a></p>
-         </div>
-     </div>
+        <!-- Publication 2 -->
+        <div class="publication">
+            <h2>IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues</h2>
+            <p><strong>Diji Yang</strong>, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
+            <p><em>SIGIR 2024</em></p>
+            <p>
+                <a href=" " target="_blank">[arXiv]</a>
+                <a href=" " target="_blank">[Code]</a>
+                <a href=" " target="_blank">[Data]</a>
+                <button class="toggle-button" onclick="toggleContent('bib2')">[BibTeX]</button>
+                <button class="toggle-button" onclick="toggleContent('abstract2')">[Abstract]</button>
+            </p>
+            <div id="bib2" class="toggle-content">
+                <pre>
+@article{yang2024imrag,
+  title={IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues},
+  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},
+  journal={SIGIR},
+  year={2024}
+}
+                </pre>
+            </div>
+            <div id="abstract2" class="toggle-content">
+                <p>
+                    This paper introduces IM-RAG, a novel framework for multi-round retrieval-augmented generation that leverages inner monologues to improve the quality of generated responses.
+                </p>
+            </div>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="publication">
+            <h2>A bespoke question intent taxonomy for e-commerce</h2>
+            <p><strong>Diji Yang</strong>, Emily White, Michael Green</p>
+            <p><em>SIGIR 2024 workshop on eCommerce</em></p>
+            <p>
+                <a href=" " target="_blank">[arXiv]</a>
+                <a href=" " target="_blank">[Code]</a>
+                <a href=" " target="_blank">[Data]</a>
+                <button class="toggle-button" onclick="toggleContent('bib3')">[BibTeX]</button>
+                <button class="toggle-button" onclick="toggleContent('abstract3')">[Abstract]</button>
+            </p>
+            <div id="bib3" class="toggle-content">
+                <pre>
+@article{yang2024bespoke,
+  title={A bespoke question intent taxonomy for e-commerce},
+  author={Yang, Diji and White, Emily and Green, Michael},
+  journal={SIGIR eCommerce Workshop},
+  year={2024}
+}
+                </pre>
+            </div>
+            <div id="abstract3" class="toggle-content">
+                <p>
+                    This paper presents a bespoke taxonomy for understanding user intents in e-commerce questions, enabling more accurate and context-aware responses.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- News Section -->
     <div class="general-tags">
         <h3>News</h3>
         <div class="scrollable-box">
-            <p>Scrollable News 1</p>
-            <p>Scrollable News 2</p>
-            <p>Scrollable News 3</p>
-            <p>Scrollable News 4</p>
-            <p>Scrollable News 5</p>
-            <p>Scrollable News 6</p>
-            <p>Scrollable News 7</p>
+            <div class="news-item">
+                <p>∙ [10/2024] Our paper Right this way: Can VLMs Guide Us to See More to Answer Questions? is accepted by NeurIPS 2024</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [07/2024] Slides, paper, and more resources covered in our SIGIR 2024 tutorial tools-meet-llm are available online</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [03/2024] Our paper IM-RAG: Inner Monologue Retrieval-Augmented Generation is accepted by SIGIR 2024</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [03/2024] Our paper An interpretable answer scoring framework is accepted by SIGIR Generative-IR 2024</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [03/2024] Our paper E-commerce Question Intent Taxonomy is accepted by SIGIR eCom 2024</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [12/2023] Our paper IMMO: Inner Monologue Multi-Modal Optimization is accepted by AAAI 2024</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [10/2023] Our paper Learning Inner Monologue is accepted by NeurIPS 2023 Socially Responsible Language Modelling Research (SoLaR) workshop</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [06/2023] I will work as an Applied Scientist Intern at Amazon during this summer</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [03/2023] I am excited to be working as a part-time AI resident at Mineral</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [09/2022] Our paper CPL is accepted by EMNLP 2022</p>
+            </div>
+            <div class="news-item">
+                <p>∙ [07/2021] I will (re)join UCSC as a Graduate student</p>
+            </div>
         </div>
     </div>
-
-
 </div>
 
 <footer>
@@ -241,6 +416,16 @@
 </footer>
 
 <script>
+    // Hide the welcome header
+    setTimeout(function() {
+        var header = document.getElementById("welcomeHeader");
+        header.style.opacity = "0"; 
+        setTimeout(function() {
+            header.style.display = "none"; 
+        }, 500); 
+    }, 1000); 
+
+    // Accordion function
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -254,6 +439,16 @@
                 panel.style.maxHeight = panel.scrollHeight + "px";
             } 
         });
+    }
+
+    // Toggle content function
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
     }
 </script>
 
