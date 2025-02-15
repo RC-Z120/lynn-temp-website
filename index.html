@@ -4,35 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diji Yang - Personal Website</title>
-    
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
+        
         header {
             background-color: #0047C4;
             color: white;
             padding: 30px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: opacity 3s ease; /* Smooth fade-out effect */
+            transition: opacity 0.5s ease;
         }
 
         footer {
             background-color: #0047C4;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 8px;
             position: fixed;
             bottom: 0;
             width: 100%;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        footer:hover {
+            opacity: 1;
         }
 
         .container {
@@ -231,6 +229,7 @@
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 5px;
+            overflow: hidden; /* Ensure content doesn't overflow */
         }
 
         .toggle-content pre {
@@ -238,16 +237,108 @@
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
+            white-space: pre-wrap; /* Ensure long lines wrap */
+            word-wrap: break-word; /* Break long words if necessary */
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #0047C4;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            margin-top: 60px;
+        }
+
+        .year-navigation {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .year-navigation a {
+            margin: 0 10px;
+            color: #0047C4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .year-navigation a:hover {
+            text-decoration: underline;
+        }
+
+        .year-section {
+            margin-top: 30px;
+        }
+
+        .year-section h4 {
+            color: #0047C4;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #0047C4;
+            padding-bottom: 5px;
         }
     </style>
+    <!-- Load Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- 导航栏 -->
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#news">News</a></li>
+    </ul>
+</nav>
 
 <header id="welcomeHeader">
     <h2>Welcome to Diji Yang's Website</h2>
 </header>
 
 <div class="container">
+
     <!-- Profile Section -->
     <div class="profile">
         <img src="https://dyang39.github.io/images/Cropped%20Circle.png" alt="photo">
@@ -261,7 +352,7 @@
     </div>
 
     <!-- About Section -->
-    <div class="general-tags">
+    <div id="about" class="general-tags">
         <h3>About</h3>
         <p>Diji Yang
             I’m currently a PhD student at the University of California Santa Cruz working with Prof. 
@@ -270,7 +361,7 @@
     </div>
 
     <!-- Services Section -->
-    <div class="general-tags">
+    <div id="services" class="general-tags">
         <h3>Services</h3>
         <p>
             <b>Teaching assistant: </b>Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023
@@ -282,90 +373,236 @@
     <!-- Publications Section -->
     <button class="accordion"><h3>Publications</h3></button>
     <div class="panel">
-        <!-- Publication 1 -->
-        <div class="publication">
-            <h2>Right this way: Can VLMs Guide Us to See More to Answer Questions?</h2>
-            <p><strong>Diji Yang</strong>, Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin</p>
-            <p><em>NeurIPS 2024</em></p>
-            <p>
-                <a href=" " target="_blank">[arXiv]</a>
-                <a href=" " target="_blank">[Code]</a>
-                <a href=" " target="_blank">[Data]</a>
-                <button class="toggle-button" onclick="toggleContent('bib1')">[BibTeX]</button>
-                <button class="toggle-button" onclick="toggleContent('abstract1')">[Abstract]</button>
-            </p>
-            <div id="bib1" class="toggle-content">
-                <pre>
+
+        <!-- year guide -->
+        <div class="year-navigation">
+            <a href="#year-2024">2024</a>
+            <a href="#year-2023">2023</a>
+            <a href="#year-2022">2022</a>
+        </div>
+
+        <!-- 2024 Publications -->
+        <div id="year-2024" class="year-section">
+            <h4>2024</h4>
+
+            <!-- Publication 1 -->
+            <div class="publication">
+                <h2>Right this way: Can VLMs Guide Us to See More to Answer Questions?</h2>
+                <p><strong>Diji Yang</strong>, Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin</p>
+                <p><em>NeurIPS 2024</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib1')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract1')">[Abstract]</button>
+                </p>
+                <div id="bib1" class="toggle-content">
+                    <pre>
 @article{yang2024right,
   title={Right this way: Can VLMs Guide Us to See More to Answer Questions?},
   author={Yang, Diji and Liu, Li and Zhong, Sijia and Tholeti, Kalyana Suma Sree and Ding, Lei and Zhang, Yi and Gilpin, Leilani H},
   journal={NeurIPS},
   year={2024}
 }
-                </pre>
+                    </pre>
+                </div>
+                <div id="abstract1" class="toggle-content">
+                    <p>
+                        This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems.
+                    </p>
+                </div>
             </div>
-            <div id="abstract1" class="toggle-content">
-                <p>
-                    This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems.
-                </p>
-            </div>
-        </div>
 
-        <!-- Publication 2 -->
-        <div class="publication">
-            <h2>IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues</h2>
-            <p><strong>Diji Yang</strong>, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
-            <p><em>SIGIR 2024</em></p>
-            <p>
-                <a href=" " target="_blank">[arXiv]</a>
-                <a href=" " target="_blank">[Code]</a>
-                <a href=" " target="_blank">[Data]</a>
-                <button class="toggle-button" onclick="toggleContent('bib2')">[BibTeX]</button>
-                <button class="toggle-button" onclick="toggleContent('abstract2')">[Abstract]</button>
-            </p>
-            <div id="bib2" class="toggle-content">
-                <pre>
+            <!-- Publication 2 -->
+            <div class="publication">
+                <h2>IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues</h2>
+                <p><strong>Diji Yang</strong>, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
+                <p><em>SIGIR 2024</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib2')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract2')">[Abstract]</button>
+                </p>
+                <div id="bib2" class="toggle-content">
+                    <pre>
 @article{yang2024imrag,
   title={IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues},
   author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},
   journal={SIGIR},
   year={2024}
 }
-                </pre>
+                    </pre>
+                </div>
+                <div id="abstract2" class="toggle-content">
+                    <p>
+                        This paper introduces IM-RAG, a novel framework for multi-round retrieval-augmented generation that leverages inner monologues to improve the quality of generated responses.
+                    </p>
+                </div>
             </div>
-            <div id="abstract2" class="toggle-content">
-                <p>
-                    This paper introduces IM-RAG, a novel framework for multi-round retrieval-augmented generation that leverages inner monologues to improve the quality of generated responses.
-                </p>
-            </div>
-        </div>
 
-        <!-- Publication 3 -->
-        <div class="publication">
-            <h2>A bespoke question intent taxonomy for e-commerce</h2>
-            <p><strong>Diji Yang</strong>, Emily White, Michael Green</p>
-            <p><em>SIGIR 2024 workshop on eCommerce</em></p>
-            <p>
-                <a href=" " target="_blank">[arXiv]</a>
-                <a href=" " target="_blank">[Code]</a>
-                <a href=" " target="_blank">[Data]</a>
-                <button class="toggle-button" onclick="toggleContent('bib3')">[BibTeX]</button>
-                <button class="toggle-button" onclick="toggleContent('abstract3')">[Abstract]</button>
-            </p>
-            <div id="bib3" class="toggle-content">
-                <pre>
+            <!-- Publication 3 -->
+            <div class="publication">
+                <h2>A bespoke question intent taxonomy for e-commerce</h2>
+                <p><strong>Diji Yang</strong>, Emily White, Michael Green</p>
+                <p><em>SIGIR 2024 workshop on eCommerce</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib3')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract3')">[Abstract]</button>
+                </p>
+                <div id="bib3" class="toggle-content">
+                    <pre>
 @article{yang2024bespoke,
   title={A bespoke question intent taxonomy for e-commerce},
   author={Yang, Diji and White, Emily and Green, Michael},
   journal={SIGIR eCommerce Workshop},
   year={2024}
 }
-                </pre>
+                    </pre>
+                </div>
+                <div id="abstract3" class="toggle-content">
+                    <p>
+                        This paper presents a bespoke taxonomy for understanding user intents in e-commerce questions, enabling more accurate and context-aware responses.
+                    </p>
+                </div>
             </div>
-            <div id="abstract3" class="toggle-content">
+
+            <!-- Publication 4 -->
+            <div class="publication">
+                <h2>An Interpretable Answer Scoring Framework</h2>
+                <p>Omar Alonso, Preetam Prabhu Srikar Dammu, <strong>Diji Yang</strong></p>
+                <p><em>SIGIR 2024 workshop on Generative Information Retrieval</em></p>
                 <p>
-                    This paper presents a bespoke taxonomy for understanding user intents in e-commerce questions, enabling more accurate and context-aware responses.
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib4')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract4')">[Abstract]</button>
                 </p>
+                <div id="bib4" class="toggle-content">
+                    <pre>
+@article{alonso2024interpretable,
+  title={An Interpretable Answer Scoring Framework},
+  author={Alonso, Omar and Dammu, Preetam Prabhu Srikar and Yang, Diji},
+  journal={SIGIR Workshop on Generative Information Retrieval},
+  year={2024}
+}
+                    </pre>
+                </div>
+                <div id="abstract4" class="toggle-content">
+                    <p>
+                        This paper proposes an interpretable framework for scoring answers in question-answering systems, focusing on transparency and explainability.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Publication 5 -->
+            <div class="publication">
+                <h2>Tackling vision language tasks through learning inner monologues</h2>
+                <p><strong>Diji Yang</strong>, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
+                <p><em>AAAI 2024</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib5')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract5')">[Abstract]</button>
+                </p>
+                <div id="bib5" class="toggle-content">
+                    <pre>
+@article{yang2024tackling,
+  title={Tackling vision language tasks through learning inner monologues},
+  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},
+  journal={AAAI},
+  year={2024}
+}
+                    </pre>
+                </div>
+                <div id="abstract5" class="toggle-content">
+                    <p>
+                        This paper explores the use of inner monologues to improve performance on vision-language tasks, demonstrating significant gains in model interpretability and accuracy.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2023 Publications -->
+        <div id="year-2023" class="year-section">
+            <h4>2023</h4>
+
+            <!-- Publication 6 -->
+            <div class="publication">
+                <h2>Learning Inner Monologue and Its Utilization in Vision-Language Challenges</h2>
+                <p><strong>Diji Yang</strong>, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang</p>
+                <p><em>NeurIPS workshop on Socially Responsible Language Modelling Research</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib6')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract6')">[Abstract]</button>
+                </p>
+                <div id="bib6" class="toggle-content">
+                    <pre>
+@article{yang2023learning,
+  title={Learning Inner Monologue and Its Utilization in Vision-Language Challenges},
+  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},
+  journal={NeurIPS Workshop on Socially Responsible Language Modelling Research},
+  year={2023}
+}
+                    </pre>
+                </div>
+                <div id="abstract6" class="toggle-content">
+                    <p>
+                        This paper investigates the role of inner monologues in enhancing vision-language models, with a focus on socially responsible AI applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2022 Publications -->
+        <div id="year-2022" class="year-section">
+            <h4>2022</h4>
+
+            <!-- Publication 7 -->
+            <div class="publication">
+                <h2>Cpl: Counterfactual prompt learning for vision and language models</h2>
+                <p>Xuehai He, <strong>Diji Yang</strong>, Weixi Feng, Tsu-Jui Fu, Arjun Akula, Varun Jampani, Pradyumna Narayana, Sugato Basu, William Yang Wang, Xin Eric Wang</p>
+                <p><em>EMNLP 2022</em></p>
+                <p>
+                    <a href=" " target="_blank">[Paper]</a>
+                    <a href=" " target="_blank">[arXiv]</a>
+                    <a href=" " target="_blank">[Code]</a>
+                    <a href=" " target="_blank">[Data]</a>
+                    <button class="toggle-button" onclick="toggleContent('bib7')">[BibTeX]</button>
+                    <button class="toggle-button" onclick="toggleContent('abstract7')">[Abstract]</button>
+                </p>
+                <div id="bib7" class="toggle-content">
+                    <pre>
+@article{he2022cpl,
+  title={Cpl: Counterfactual prompt learning for vision and language models},
+  author={He, Xuehai and Yang, Diji and Feng, Weixi and Fu, Tsu-Jui and Akula, Arjun and Jampani, Varun and Narayana, Pradyumna and Basu, Sugato and Wang, William Yang and Wang, Xin Eric},
+  journal={EMNLP},
+  year={2022}
+}
+                    </pre>
+                </div>
+                <div id="abstract7" class="toggle-content">
+                    <p>
+                        This paper introduces Counterfactual Prompt Learning (CPL), a novel approach to improve vision-language models by leveraging counterfactual reasoning.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -409,23 +646,36 @@
             </div>
         </div>
     </div>
+
+    <!-- ClustrMaps 小地图 -->
+    <div style="text-align: center; margin-top: 30px;">
+        <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=your-code-here"></script>
+    </div>
 </div>
 
+<!-- 自动更新时间 -->
 <footer>
-    <p>&copy; Diji Yang. Last updated by: RC</p>
+    <p>&copy; Diji Yang. Last updated: <span id="last-update"></span></p>
 </footer>
 
 <script>
-    // Hide the welcome header
+    // 自动更新时间
+    const lastUpdateElement = document.getElementById('last-update');
+    const lastUpdateDate = new Date();
+    const options = { year: 'numeric', month: 'long' };
+    lastUpdateElement.textContent = lastUpdateDate.toLocaleDateString('en-US', options);
+
+
+    // Hide the welcome header after 1 second
     setTimeout(function() {
         var header = document.getElementById("welcomeHeader");
-        header.style.opacity = "0"; 
+        header.style.opacity = "0"; // Fade out
         setTimeout(function() {
-            header.style.display = "none"; 
-        }, 500); 
-    }, 1000); 
+            header.style.display = "none"; // Hide after fade-out
+        }, 500); // Wait for the fade-out transition to complete
+    }, 1000); // 1 second delay
 
-    // Accordion function
+    // Accordion functionality
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -436,12 +686,13 @@
             if (panel.style.maxHeight) {
                 panel.style.maxHeight = null;
             } else {
+                // Set max-height to a large value to ensure all content is visible
                 panel.style.maxHeight = panel.scrollHeight + "px";
             } 
         });
     }
 
-    // Toggle content function
+    // Toggle content functionality
     function toggleContent(id) {
         var content = document.getElementById(id);
         if (content.style.display === "none" || content.style.display === "") {
