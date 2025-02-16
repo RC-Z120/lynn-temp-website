@@ -1,0 +1,43 @@
+"profile": {
+        "name": "Diji Yang",
+        "title": "PhD student | AI Enthusiast",
+        "university": "University of California Santa Cruz",
+        "email": "dyang39@csumb.edu",
+        "linkedin": "diji-yang"
+    },
+    "about": "I’m currently a PhD student at the University of California Santa Cruz working with Prof. Yi Zhang. I received my Bachelor’s degree in Computer Science and Statistics from UC Santa Cruz. I’m fortunate to have joined Prof. Xin Eric Wang’s lab to focus on the NLP research.",
+    "services": {
+        "teaching": "Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023",
+        "reviewer": "NeurIPS 2023, TheWebConf 2024, CVPR 2024, ICML 2024"
+    },
+    "publications": [
+        {
+            "year": "2024",
+            "title": "Right this way: Can VLMs Guide Us to See More to Answer Questions?",
+            "authors": "Diji Yang, Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin",
+            "journal": "NeurIPS 2024",
+            "abstract": "This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems.",
+            "bibtex": "@article{yang2024right,\n  title={Right this way: Can VLMs Guide Us to See More to Answer Questions?},\n  author={Yang, Diji and Liu, Li and Zhong, Sijia and Tholeti, Kalyana Suma Sree and Ding, Lei and Zhang, Yi and Gilpin, Leilani H},\n  journal={NeurIPS},\n  year={2024}\n}",
+            "paper": "https://example.com/paper.pdf",
+            "arxiv": "https://arxiv.org/abs/1234.5678",
+            "code": "https://github.com/example",
+            "data": "https://example.com/data"
+        },
+        {
+            "year": "2024",
+            "title": "IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues",
+            "authors": "Diji Yang, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang",
+            "journal": "SIGIR 2024",
+            "abstract": "This paper introduces IM-RAG, a novel framework for multi-round retrieval-augmented generation that leverages inner monologues to improve the quality of generated responses.",
+            "bibtex": "@article{yang2024imrag,\n  title={IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues},\n  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},\n  journal={SIGIR},\n  year={2024}\n}",
+            "paper": "https://example.com/paper.pdf",
+            "arxiv": "https://arxiv.org/abs/1234.5678",
+            "code": "https://github.com/example",
+            "data": "https://example.com/data"
+        }
+    ],
+    "news": [
+        "[10/2024] Our paper Right this way: Can VLMs Guide Us to See More to Answer Questions? is accepted by NeurIPS 2024",
+        "[07/2024] Slides, paper, and more resources covered in our SIGIR 2024 tutorial tools-meet-llm are available online"
+    ]
+}
