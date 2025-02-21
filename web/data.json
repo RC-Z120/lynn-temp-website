@@ -1,43 +1,99 @@
-"profile": {
+{
+    "profile": {
         "name": "Diji Yang",
-        "title": "PhD student | AI Enthusiast",
-        "university": "University of California Santa Cruz",
+        "title": "PhD student | Research Scientist",
+        "institution": "University of California Santa Cruz",
         "email": "dyang39@csumb.edu",
-        "linkedin": "diji-yang"
+        "linkedin": "diji-yang",
+        "image": "https://dyang39.github.io/images/Cropped%20Circle.png"
     },
     "about": "I’m currently a PhD student at the University of California Santa Cruz working with Prof. Yi Zhang. I received my Bachelor’s degree in Computer Science and Statistics from UC Santa Cruz. I’m fortunate to have joined Prof. Xin Eric Wang’s lab to focus on the NLP research.",
+    "researchInterest": "",
+    "experience": "",
     "services": {
-        "teaching": "Programming Abstractions 2022, Advanced Topics in Natural Language Processing 2023",
-        "reviewer": "NeurIPS 2023, TheWebConf 2024, CVPR 2024, ICML 2024"
+        "teachingAssistant": [
+            "Programming Abstractions 2022",
+            "Advanced Topics in Natural Language Processing 2023"
+        ],
+        "reviewer": [
+            "NeurIPS 2023",
+            "TheWebConf 2024",
+            "CVPR 2024",
+            "ICML 2024"
+        ]
     },
-    "publications": [
+    "selectedPublications": [
         {
-            "year": "2024",
             "title": "Right this way: Can VLMs Guide Us to See More to Answer Questions?",
             "authors": "Diji Yang, Li Liu, Sijia Zhong, Kalyana Suma Sree Tholeti, Lei Ding, Yi Zhang, Leilani H Gilpin",
-            "journal": "NeurIPS 2024",
-            "abstract": "This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems.",
-            "bibtex": "@article{yang2024right,\n  title={Right this way: Can VLMs Guide Us to See More to Answer Questions?},\n  author={Yang, Diji and Liu, Li and Zhong, Sijia and Tholeti, Kalyana Suma Sree and Ding, Lei and Zhang, Yi and Gilpin, Leilani H},\n  journal={NeurIPS},\n  year={2024}\n}",
-            "paper": "https://example.com/paper.pdf",
-            "arxiv": "https://arxiv.org/abs/1234.5678",
-            "code": "https://github.com/example",
-            "data": "https://example.com/data"
+            "conference": "NeurIPS 2024",
+            "links": {
+                "paper": "",
+                "arxiv": "",
+                "code": "",
+                "data": ""
+            },
+            "bibtex": "@article{yang2024right,\ntitle={Right this way: Can VLMs Guide Us to See More to Answer Questions?},\nauthor={Yang, Diji and Liu, Li and Zhong, Sijia and Tholeti, Kalyana Suma Sree and Ding, Lei and Zhang, Yi and Gilpin, Leilani H},\njournal={NeurIPS},\nyear={2024}\n}",
+            "abstract": "This paper explores the capabilities of Vision-Language Models (VLMs) in guiding users to answer questions by providing additional visual context. We propose a novel framework that leverages VLMs to enhance question-answering systems."
         },
         {
-            "year": "2024",
-            "title": "IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues",
+            "title": "Learning Inner Monologue and Its Utilization in Vision-Language Challenges",
             "authors": "Diji Yang, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang",
-            "journal": "SIGIR 2024",
-            "abstract": "This paper introduces IM-RAG, a novel framework for multi-round retrieval-augmented generation that leverages inner monologues to improve the quality of generated responses.",
-            "bibtex": "@article{yang2024imrag,\n  title={IM-RAG: Multi-Round Retrieval-Augmented Generation Through Learning Inner Monologues},\n  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},\n  journal={SIGIR},\n  year={2024}\n}",
-            "paper": "https://example.com/paper.pdf",
-            "arxiv": "https://arxiv.org/abs/1234.5678",
-            "code": "https://github.com/example",
-            "data": "https://example.com/data"
+            "conference": "NeurIPS workshop on Socially Responsible Language Modelling Research",
+            "links": {
+                "paper": "",
+                "arxiv": "",
+                "code": "",
+                "data": ""
+            },
+            "bibtex": "@article{yang2023learning,\n  title={Learning Inner Monologue and Its Utilization in Vision-Language Challenges},\n  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},\n  journal={NeurIPS Workshop on Socially Responsible Language Modelling Research},\n  year={2023}\n}",
+            "abstract": "This paper investigates the role of inner monologues in enhancing vision-language models, with a focus on socially responsible AI applications."
         }
     ],
+    "fullPublications": {
+        "2024": [],
+        "2023": [
+            {
+                "title": "Learning Inner Monologue and Its Utilization in Vision-Language Challenges",
+                "authors": "Diji Yang, Jinmeng Rao, Kezhen Chen, Xiaoyuan Guo, Yawen Zhang, Jie Yang, Yi Zhang",
+                "conference": "NeurIPS workshop on Socially Responsible Language Modelling Research",
+                "links": {
+                    "paper": "",
+                    "arxiv": "",
+                    "code": "",
+                    "data": ""
+                },
+                "bibtex": "@article{yang2023learning,\n  title={Learning Inner Monologue and Its Utilization in Vision-Language Challenges},\n  author={Yang, Diji and Rao, Jinmeng and Chen, Kezhen and Guo, Xiaoyuan and Zhang, Yawen and Yang, Jie and Zhang, Yi},\n  journal={NeurIPS Workshop on Socially Responsible Language Modelling Research},\n  year={2023}\n}",
+                "abstract": "This paper investigates the role of inner monologues in enhancing vision-language models, with a focus on socially responsible AI applications."
+            }
+        ],
+        "2022": [
+            {
+                "title": "Cpl: Counterfactual prompt learning for vision and language models",
+                "authors": "Xuehai He, Diji Yang, Weixi Feng, Tsu-Jui Fu, Arjun Akula, Varun Jampani, Pradyumna Narayana, Sugato Basu, William Yang Wang, Xin Eric Wang",
+                "conference": "EMNLP 2022",
+                "links": {
+                    "paper": "",
+                    "arxiv": "",
+                    "code": "",
+                    "data": ""
+                },
+                "bibtex": "@article{he2022cpl,\n  title={Cpl: Counterfactual prompt learning for vision and language models},\n  author={He, Xuehai and Yang, Diji and Feng, Weixi and Fu, Tsu-Jui and Akula, Arjun and Jampani, Varun and Narayana, Pradyumna and Basu, Sugato and Wang, William Yang and Wang, Xin Eric},\n  journal={EMNLP},\n  year={2022}\n}",
+                "abstract": "This paper introduces Counterfactual Prompt Learning (CPL), a novel approach to improve vision-language models by leveraging counterfactual reasoning."
+            }
+        ]
+    },
     "news": [
-        "[10/2024] Our paper Right this way: Can VLMs Guide Us to See More to Answer Questions? is accepted by NeurIPS 2024",
-        "[07/2024] Slides, paper, and more resources covered in our SIGIR 2024 tutorial tools-meet-llm are available online"
+        "∙ [10/2024] Our paper Right this way: Can VLMs Guide Us to See More to Answer Questions? is accepted by NeurIPS 2024",
+        "∙ [07/2024] Slides, paper, and more resources covered in our SIGIR 2024 tutorial tools-meet-llm are available online",
+        "∙ [03/2024] Our paper IM-RAG: Inner Monologue Retrieval-Augmented Generation is accepted by SIGIR 2024",
+        "∙ [03/2024] Our paper An interpretable answer scoring framework is accepted by SIGIR Generative-IR 2024",
+        "∙ [03/2024] Our paper E-commerce Question Intent Taxonomy is accepted by SIGIR eCom 2024",
+        "∙ [12/2023] Our paper IMMO: Inner Monologue Multi-Modal Optimization is accepted by AAAI 2024",
+        "∙ [10/2023] Our paper Learning Inner Monologue is accepted by NeurIPS 2023 Socially Responsible Language Modelling Research (SoLaR) workshop",
+        "∙ [06/2023] I will work as an Applied Scientist Intern at Amazon during this summer",
+        "∙ [03/2023] I am excited to be working as a part-time AI resident at Mineral",
+        "∙ [09/2022] Our paper CPL is accepted by EMNLP 2022",
+        "∙ [07/2021] I will (re)join UCSC as a Graduate student"
     ]
 }
