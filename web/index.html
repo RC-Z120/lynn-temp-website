@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diji Yang - Personal Website</title>
+    
+    <link rel="stylesheet" href="styles.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <div class="container">
+
+        <!-- Profile Section -->
+        <div class="profile">
+            <img id="profile-image" src="" alt="photo">
+            <div class="profile-info">
+                <h2 id="profile-name"></h2>
+                <p id="profile-title"></p>
+                <p id="profile-institution"></p>
+                <p>Email: <span id="profile-email"></span></p>
+                <p>LinkedIn: <a id="profile-linkedin" href="#" style="color: #2c3e50;"></a></p>
+            </div>
+        </div>
+    
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Research Interest">Research Interest</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Selected Publication">Selected Publication</a></li>
+                <li><a href="#Full publication">Full publication</a></li>
+                <li><a href="#News">News</a></li>
+            </ul>
+        </nav>
+    
+        <!-- About Section -->
+        <div id="about" class="general-tags">
+            <h3>About</h3>
+            <p id="about-text"></p>
+        </div>
+    
+        <!-- Research Interest Section -->
+        <div id="Research Interest" class="general-tags">
+            <h3>Research Interest</h3>
+            <p id="research-interest-text"></p>
+        </div>
+    
+        <!-- Experience -->
+        <div id="Experience" class="general-tags">
+            <h3>Experience</h3>
+            <p id="experience-text"></p>
+        </div>    
+    
+        <!-- Services Section -->
+        <div id="Services" class="general-tags">
+            <h3>Services</h3>
+            <p id="services-text"></p>
+        </div>
+    
+        <!-- Selected Publication Section -->
+        <div id="Selected Publication" class="general-tags">
+            <h3>Selected Publication</h3>
+            <br>
+            <div id="selected-publications"></div>
+        </div>
+    
+        <!-- Full publication Section -->
+        <div id="Full publication" class="general-tags">
+            <button class="accordion"><h3>Full publication</h3></button>
+            <div class="panel">
+                <div class="year-navigation">
+                    <a href="#year-2024">2024</a>
+                    <a href="#year-2023">2023</a>
+                    <a href="#year-2022">2022</a>
+                </div>
+                <div id="full-publications"></div>
+            </div>
+        </div>
+    
+        <!-- News Section -->
+        <div id="News" class="general-tags">
+            <h3>News</h3>
+            <div class="scrollable-box" id="news-items"></div>
+        </div>
+    </div>
+    
+    <!-- ClustrMaps 小地图 -->
+    <div style="text-align: center; margin-top: 30px;">
+        <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=your-code-here"></script>
+    </div>
+    
+    <!-- 自动更新时间 -->
+    <p>&copy; Diji Yang. Last updated: <span id="last-update"></span></p>
+
+
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
